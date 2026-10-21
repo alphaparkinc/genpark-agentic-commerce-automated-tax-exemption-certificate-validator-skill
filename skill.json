@@ -1,0 +1,66 @@
+{
+  "name": "genpark-agentic-commerce-automated-tax-exemption-certificate-validator-skill",
+  "version": "1.0.0",
+  "title": "B2B Sales Tax Exemption Certificate & Resale Validator Skill",
+  "description": "B2B sales tax exemption certificate SST/resale certificate validity, state revenue department verification, and expiration sentinel. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "tax-exemption",
+    "resale-certificate",
+    "b2b-checkout",
+    "sales-tax",
+    "compliance",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "validate_resale_certificate",
+      "description": "Validate tax exemption certificate structure, state registration number, and permit expiration.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "state_code": {
+            "type": "string"
+          },
+          "tax_id_number": {
+            "type": "string"
+          },
+          "business_name": {
+            "type": "string"
+          },
+          "certificate_expiration_date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state_code",
+          "tax_id_number",
+          "business_name"
+        ]
+      }
+    },
+    {
+      "name": "calculate_tax_waived_order_total",
+      "description": "Compute sales tax exclusion amount on exempt B2B wholesale order.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "subtotal_usd": {
+            "type": "number"
+          },
+          "standard_state_tax_rate_pct": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "subtotal_usd",
+          "standard_state_tax_rate_pct"
+        ]
+      }
+    }
+  ]
+}
